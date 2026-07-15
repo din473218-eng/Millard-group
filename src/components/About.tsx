@@ -1,6 +1,58 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ShieldCheck, Compass, Sparkles, Award } from 'lucide-react';
 import { motion } from 'motion/react';
+
+function AnimatedCounter({ value, duration = 1800 }: { value: string; duration?: number }) {
+  const [count, setCount] = useState(0);
+  const numericValue = parseInt(value.replace(/[^0-9]/g, ''), 10) || 0;
+  const suffix = value.replace(/[0-9]/g, '');
+  const elementRef = useRef<HTMLSpanElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible) return;
+    let start = 0;
+    const end = numericValue;
+    if (start === end) return;
+
+    const totalMilliseconds = duration;
+    const incrementTime = Math.max(Math.floor(totalMilliseconds / end), 15);
+    
+    const timer = setInterval(() => {
+      start += Math.ceil(end / (totalMilliseconds / incrementTime));
+      if (start >= end) {
+        clearInterval(timer);
+        setCount(end);
+      } else {
+        setCount(start);
+      }
+    }, incrementTime);
+
+    return () => clearInterval(timer);
+  }, [numericValue, isVisible, duration]);
+
+  return (
+    <span ref={elementRef}>
+      {count}
+      {suffix}
+    </span>
+  );
+}
 
 interface AboutProps {
   onLearnMore: () => void;
@@ -118,7 +170,7 @@ export default function About({ onLearnMore }: AboutProps) {
           {stats.map((stat, i) => (
             <div key={i} className="text-center md:text-left space-y-1">
               <span className="font-serif text-3xl md:text-5xl font-light text-brand-gold block">
-                {stat.value}
+                <AnimatedCounter value={stat.value} />
               </span>
               <span className="font-sans text-xs md:text-sm font-semibold text-brand-charcoal tracking-wider block uppercase">
                 {stat.label}

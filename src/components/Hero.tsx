@@ -36,23 +36,23 @@ export default function Hero({ onExplore, onContact }: HeroProps) {
   }, []);
 
   return (
-    <section id="hero-section" className="relative min-h-[90vh] md:h-screen w-full overflow-hidden flex items-center justify-center bg-brand-beige">
-      {/* Cinematic Slideshow Background with Light Aesthetic Masking */}
+    <section id="hero-section" className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-black">
+      {/* Cinematic Slideshow Background with Dark Premium Overlay */}
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentIndex}
             initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ opacity: 0.35, scale: 1 }}
+            animate={{ opacity: 0.55, scale: 1 }}
             exit={{ opacity: 0, scale: 0.98 }}
             transition={{ duration: 2.0, ease: 'easeInOut' }}
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${backgroundImages[currentIndex].url})` }}
           />
         </AnimatePresence>
-        {/* Editorial overlay masks - soft fade to warm beige */}
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-beige via-brand-beige/80 to-brand-beige/50 z-10" />
-        <div className="absolute inset-0 bg-white/30 backdrop-blur-[2px] z-10" />
+        {/* Cinematic dark overlays to make text stand out perfectly */}
+        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/45 to-neutral-950/70 z-10" />
+        <div className="absolute inset-0 bg-black/30 backdrop-blur-[1px] z-10" />
 
         {/* Elegant structural vector outline pattern matching user Design HTML */}
         <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none select-none z-15">
@@ -61,9 +61,9 @@ export default function Hero({ onExplore, onContact }: HeroProps) {
       </div>
 
       {/* Decorative Brand Tag Line in Background */}
-      <div className="absolute top-1/4 right-12 z-20 hidden xl:flex flex-col items-end opacity-40 pointer-events-none">
+      <div className="absolute top-1/4 right-12 z-20 hidden xl:flex flex-col items-end opacity-60 pointer-events-none">
         <span className="font-mono text-[10px] tracking-[0.5em] text-brand-gold uppercase mb-2">Featured Exhibit</span>
-        <span className="font-serif text-2xl font-light tracking-widest text-brand-charcoal italic">{backgroundImages[currentIndex].brand}</span>
+        <span className="font-serif text-2xl font-light tracking-widest text-white italic">{backgroundImages[currentIndex].brand}</span>
       </div>
 
       {/* Hero Content */}
@@ -87,7 +87,7 @@ export default function Hero({ onExplore, onContact }: HeroProps) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.0, delay: 0.4 }}
-          className="font-serif text-4xl sm:text-5xl md:text-7xl font-medium tracking-tight text-brand-charcoal leading-[1.1] mb-6 max-w-4xl"
+          className="font-serif text-4xl sm:text-5xl md:text-7xl font-light tracking-tight text-white leading-[1.15] mb-6 max-w-4xl"
         >
           Three Exceptional Brands.<br />
           <span className="italic font-normal text-brand-gold">One Premium Experience.</span>
@@ -98,7 +98,7 @@ export default function Hero({ onExplore, onContact }: HeroProps) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.0, delay: 0.6 }}
-          className="font-sans text-brand-brown text-sm sm:text-base md:text-lg tracking-wide font-light max-w-2xl leading-relaxed mb-10"
+          className="font-sans text-neutral-300 text-sm sm:text-base md:text-lg tracking-wide font-light max-w-2xl leading-relaxed mb-10"
         >
           Discover the finest specialty coffee, authentic Italian dining, and premium hospitality curated under one destination for the discerning explorer.
         </motion.p>
@@ -113,7 +113,7 @@ export default function Hero({ onExplore, onContact }: HeroProps) {
           {/* Explore Our Brands button */}
           <button
             onClick={onExplore}
-            className="w-full sm:w-auto px-10 py-4 bg-brand-charcoal hover:bg-brand-gold text-white font-mono text-xs tracking-[0.2em] uppercase font-semibold rounded-none shadow-sm hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2 cursor-pointer group"
+            className="w-full sm:w-auto px-10 py-4 bg-brand-gold hover:bg-white text-brand-charcoal hover:text-brand-charcoal font-mono text-xs tracking-[0.2em] uppercase font-bold rounded-none shadow-md hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2 cursor-pointer group"
           >
             <span>Explore Brands</span>
             <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
@@ -122,7 +122,7 @@ export default function Hero({ onExplore, onContact }: HeroProps) {
           {/* Contact Us button */}
           <button
             onClick={onContact}
-            className="w-full sm:w-auto px-10 py-4 border border-brand-charcoal hover:border-brand-gold text-brand-charcoal hover:text-brand-gold font-mono text-xs tracking-[0.2em] uppercase rounded-none bg-transparent transition-all duration-300 flex items-center justify-center cursor-pointer"
+            className="w-full sm:w-auto px-10 py-4 border border-white hover:border-brand-gold text-white hover:text-brand-gold font-mono text-xs tracking-[0.2em] uppercase rounded-none bg-transparent hover:bg-white/5 transition-all duration-300 flex items-center justify-center cursor-pointer font-bold"
           >
             <span>Contact Us</span>
           </button>
@@ -137,7 +137,7 @@ export default function Hero({ onExplore, onContact }: HeroProps) {
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center cursor-pointer"
         onClick={onExplore}
       >
-        <span className="font-mono text-[9px] tracking-[0.3em] text-brand-brown/60 uppercase mb-2">Scroll to Discover</span>
+        <span className="font-mono text-[9px] tracking-[0.3em] text-neutral-400 uppercase mb-2">Scroll to Discover</span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}

@@ -39,8 +39,8 @@ export default function Navbar({ currentView, onNavigate }: NavbarProps) {
         id="luxury-navbar"
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
           isScrolled
-            ? 'bg-white/80 backdrop-blur-md border-b border-brand-gold/20 py-4 shadow-md'
-            : 'bg-brand-beige/40 backdrop-blur-sm py-6'
+            ? 'bg-white/90 backdrop-blur-md border-b border-brand-gold/15 py-4 shadow-md'
+            : 'bg-transparent py-6'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
@@ -53,7 +53,7 @@ export default function Navbar({ currentView, onNavigate }: NavbarProps) {
             className="group flex items-center gap-1.5 cursor-pointer text-left focus:outline-none"
             id="logo-button"
           >
-            <span className="font-serif text-xl md:text-2xl font-bold tracking-[0.2em] text-brand-charcoal transition-colors duration-300 group-hover:text-brand-gold">
+            <span className={`font-serif text-xl md:text-2xl font-bold tracking-[0.2em] transition-colors duration-300 group-hover:text-brand-gold ${isScrolled ? 'text-brand-charcoal' : 'text-white'}`}>
               MILLARD <span className="text-brand-gold">GROUP</span>
             </span>
           </button>
@@ -66,7 +66,11 @@ export default function Navbar({ currentView, onNavigate }: NavbarProps) {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
               className={`font-sans text-[11px] uppercase tracking-[0.15em] transition-colors duration-300 cursor-pointer ${
-                currentView === 'home' ? 'text-brand-gold font-bold' : 'text-brand-charcoal/80 hover:text-brand-gold'
+                currentView === 'home'
+                  ? 'text-brand-gold font-bold'
+                  : isScrolled
+                    ? 'text-brand-charcoal/80 hover:text-brand-gold'
+                    : 'text-white/80 hover:text-brand-gold'
               }`}
             >
               Home
@@ -82,7 +86,9 @@ export default function Navbar({ currentView, onNavigate }: NavbarProps) {
                 className={`flex items-center space-x-1.5 font-sans text-[11px] uppercase tracking-[0.15em] transition-colors duration-300 cursor-pointer ${
                   ['millard', 'amber', 'obika'].includes(currentView)
                     ? 'text-brand-gold font-bold'
-                    : 'text-brand-charcoal/80 hover:text-brand-gold'
+                    : isScrolled
+                      ? 'text-brand-charcoal/80 hover:text-brand-gold'
+                      : 'text-white/80 hover:text-brand-gold'
                 }`}
               >
                 <span>Our Brands</span>
@@ -143,7 +149,11 @@ export default function Navbar({ currentView, onNavigate }: NavbarProps) {
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
                 className={`font-sans text-[11px] uppercase tracking-[0.15em] transition-colors duration-300 cursor-pointer ${
-                  currentView === item.view ? 'text-brand-gold font-bold' : 'text-brand-charcoal/80 hover:text-brand-gold'
+                  currentView === item.view
+                    ? 'text-brand-gold font-bold'
+                    : isScrolled
+                      ? 'text-brand-charcoal/80 hover:text-brand-gold'
+                      : 'text-white/80 hover:text-brand-gold'
                 }`}
               >
                 {item.label}
@@ -155,7 +165,11 @@ export default function Navbar({ currentView, onNavigate }: NavbarProps) {
           <div className="hidden lg:flex items-center space-x-4">
             <button
               onClick={() => onNavigate('contact')}
-              className="px-5 py-2 border border-brand-gold text-[10px] uppercase tracking-widest text-brand-charcoal hover:bg-brand-gold hover:text-white transition-all cursor-pointer bg-transparent"
+              className={`px-5 py-2 border text-[10px] uppercase tracking-widest transition-all cursor-pointer bg-transparent ${
+                isScrolled
+                  ? 'border-brand-gold text-brand-charcoal hover:bg-brand-gold hover:text-white font-medium'
+                  : 'border-white text-white hover:bg-white hover:text-brand-charcoal font-medium'
+              }`}
               id="cta-nav"
             >
               Concierge
@@ -165,7 +179,13 @@ export default function Navbar({ currentView, onNavigate }: NavbarProps) {
           {/* Mobile Menu Trigger */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden text-brand-charcoal p-2 focus:outline-none cursor-pointer"
+            className={`lg:hidden p-2 focus:outline-none cursor-pointer transition-colors duration-300 ${
+              isMobileMenuOpen
+                ? 'text-brand-charcoal'
+                : isScrolled
+                  ? 'text-brand-charcoal'
+                  : 'text-white'
+            }`}
             id="mobile-menu-trigger"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
