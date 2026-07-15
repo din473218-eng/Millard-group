@@ -32,7 +32,7 @@ const brandCards = [
   },
   {
     id: 'millard' as BrandID,
-    name: 'Millard Elite Hospitality',
+    name: 'Millard',
     tagline: 'Bespoke Private Estates & Lifestyle Curation',
     desc: 'The pinnacle of private luxury living. Orchestrating tailor-made architectural concepts, 24/7 hyper-personalized elite concierge services, high-net-worth real-estate advisory, and members-only wellness sanctuaries.',
     image: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=800',

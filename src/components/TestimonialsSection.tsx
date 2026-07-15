@@ -49,7 +49,7 @@ export default function TestimonialsSection() {
           Endorsements
         </span>
         <h2 className="font-serif text-3xl md:text-5xl font-medium tracking-tight text-brand-charcoal mb-16">
-          Voices of Distinction
+          Guest Endorsements
         </h2>
 
         {/* Testimonials Slider */}

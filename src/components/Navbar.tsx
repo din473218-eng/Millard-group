@@ -28,7 +28,7 @@ export default function Navbar({ currentView, onNavigate }: NavbarProps) {
   ];
 
   const brands = [
-    { id: 'millard' as const, name: 'Millard Elite Hospitality', desc: 'Private Estates & Lifestyle', icon: ShieldCheck, color: 'text-brand-gold' },
+    { id: 'millard' as const, name: 'Millard', desc: 'Private Estates & Lifestyle', icon: ShieldCheck, color: 'text-brand-gold' },
     { id: 'amber' as const, name: 'Amber Coffee', desc: 'Specialty Roastery & Craft Brews', icon: Coffee, color: 'text-brand-gold' },
     { id: 'obika' as const, name: 'Obika', desc: 'Authentic Italian Mozzarella Bar', icon: Utensils, color: 'text-brand-gold' },
   ];
@@ -38,7 +38,7 @@ export default function Navbar({ currentView, onNavigate }: NavbarProps) {
       <header
         id="luxury-navbar"
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
-          isScrolled
+          isScrolled || currentView !== 'home'
             ? 'bg-white/90 backdrop-blur-md border-b border-brand-gold/15 py-4 shadow-md'
             : 'bg-transparent py-6'
         }`}
@@ -53,7 +53,7 @@ export default function Navbar({ currentView, onNavigate }: NavbarProps) {
             className="group flex items-center gap-1.5 cursor-pointer text-left focus:outline-none"
             id="logo-button"
           >
-            <span className={`font-serif text-xl md:text-2xl font-bold tracking-[0.2em] transition-colors duration-300 group-hover:text-brand-gold ${isScrolled ? 'text-brand-charcoal' : 'text-white'}`}>
+            <span className={`font-serif text-xl md:text-2xl font-bold tracking-[0.2em] transition-colors duration-300 group-hover:text-brand-gold ${isScrolled || currentView !== 'home' ? 'text-brand-charcoal' : 'text-white'}`}>
               MILLARD <span className="text-brand-gold">GROUP</span>
             </span>
           </button>
@@ -68,7 +68,7 @@ export default function Navbar({ currentView, onNavigate }: NavbarProps) {
               className={`font-sans text-[11px] uppercase tracking-[0.15em] transition-colors duration-300 cursor-pointer ${
                 currentView === 'home'
                   ? 'text-brand-gold font-bold'
-                  : isScrolled
+                  : isScrolled || currentView !== 'home'
                     ? 'text-brand-charcoal/80 hover:text-brand-gold'
                     : 'text-white/80 hover:text-brand-gold'
               }`}
@@ -86,7 +86,7 @@ export default function Navbar({ currentView, onNavigate }: NavbarProps) {
                 className={`flex items-center space-x-1.5 font-sans text-[11px] uppercase tracking-[0.15em] transition-colors duration-300 cursor-pointer ${
                   ['millard', 'amber', 'obika'].includes(currentView)
                     ? 'text-brand-gold font-bold'
-                    : isScrolled
+                    : isScrolled || currentView !== 'home'
                       ? 'text-brand-charcoal/80 hover:text-brand-gold'
                       : 'text-white/80 hover:text-brand-gold'
                 }`}
@@ -151,7 +151,7 @@ export default function Navbar({ currentView, onNavigate }: NavbarProps) {
                 className={`font-sans text-[11px] uppercase tracking-[0.15em] transition-colors duration-300 cursor-pointer ${
                   currentView === item.view
                     ? 'text-brand-gold font-bold'
-                    : isScrolled
+                    : isScrolled || currentView !== 'home'
                       ? 'text-brand-charcoal/80 hover:text-brand-gold'
                       : 'text-white/80 hover:text-brand-gold'
                 }`}
@@ -166,7 +166,7 @@ export default function Navbar({ currentView, onNavigate }: NavbarProps) {
             <button
               onClick={() => onNavigate('contact')}
               className={`px-5 py-2 border text-[10px] uppercase tracking-widest transition-all cursor-pointer bg-transparent rounded-lg ${
-                isScrolled
+                isScrolled || currentView !== 'home'
                   ? 'border-brand-gold text-brand-charcoal hover:bg-brand-gold hover:text-white font-medium'
                   : 'border-white text-white hover:bg-white hover:text-brand-charcoal font-medium'
               }`}
@@ -182,7 +182,7 @@ export default function Navbar({ currentView, onNavigate }: NavbarProps) {
             className={`lg:hidden p-2 focus:outline-none cursor-pointer transition-colors duration-300 ${
               isMobileMenuOpen
                 ? 'text-brand-charcoal'
-                : isScrolled
+                : isScrolled || currentView !== 'home'
                   ? 'text-brand-charcoal'
                   : 'text-white'
             }`}

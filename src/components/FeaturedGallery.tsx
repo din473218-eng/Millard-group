@@ -6,43 +6,43 @@ const galleryItems = [
   {
     id: 'fg-1',
     url: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800',
-    title: 'Millard Retreat Lounge',
-    category: 'Hospitality',
+    title: 'Millard Executive Bellevue Study',
+    category: 'Elite Curation',
     span: 'col-span-2 row-span-2'
   },
   {
     id: 'fg-2',
     url: 'https://images.unsplash.com/photo-1507133750040-4a8f57021571?q=80&w=800',
-    title: 'Signature Amber Pour',
+    title: 'Amber Specialty Iced Latte on cane chair',
     category: 'Coffee Chemistry',
     span: 'col-span-1 row-span-1'
   },
   {
     id: 'fg-3',
     url: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=800',
-    title: 'Obika Handcrafted Pinsa',
+    title: 'Obika Oven-baked Basil Margherita',
     category: 'Gastronomy',
     span: 'col-span-1 row-span-1'
   },
   {
     id: 'fg-4',
-    url: 'https://images.unsplash.com/photo-1546549032-9571cd6b27df?q=80&w=800',
-    title: 'Fresh Tagliolini Preparation',
+    url: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=800',
+    title: 'Artisanal Mozzarella Cheese Stretch',
     category: 'Gastronomy',
     span: 'col-span-1 row-span-2'
   },
   {
     id: 'fg-5',
-    url: 'https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=800',
-    title: 'Amber mid-century coffee bar',
+    url: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=800',
+    title: 'Amber Minimalist Facade and Geometric Doors',
     category: 'Coffee Chemistry',
     span: 'col-span-1 row-span-1'
   },
   {
     id: 'fg-6',
     url: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800',
-    title: 'Millard Luxury Suite',
-    category: 'Hospitality',
+    title: 'Obika Arched Dining Room with Red Banquettes',
+    category: 'Gastronomy',
     span: 'col-span-2 row-span-1'
   }
 ];
@@ -119,7 +119,7 @@ export default function FeaturedGallery() {
             {/* Close button */}
             <button
               onClick={() => setSelectedImage(null)}
-              className="absolute top-6 right-6 p-2 rounded-none bg-brand-beige border border-brand-gold text-brand-charcoal hover:text-brand-gold cursor-pointer focus:outline-none"
+              className="absolute top-6 right-6 p-2.5 rounded-xl bg-brand-beige border border-brand-gold text-brand-charcoal hover:text-brand-gold cursor-pointer focus:outline-none transition-colors duration-200 shadow-md"
             >
               <X className="w-6 h-6" />
             </button>
@@ -128,11 +128,11 @@ export default function FeaturedGallery() {
               <img
                 src={selectedImage.url}
                 alt={selectedImage.title}
-                className="max-h-[70vh] object-contain rounded-none border border-brand-gold/30 shadow-2xl"
+                className="max-h-[70vh] object-contain rounded-2xl border border-brand-gold/30 shadow-2xl"
                 onClick={(e) => e.stopPropagation()}
                 referrerPolicy="no-referrer"
               />
-              <div className="mt-4 text-center space-y-1">
+              <div className="mt-4 text-center space-y-1 bg-brand-charcoal border border-brand-gold/25 px-6 py-2.5 rounded-xl shadow-xl max-w-md">
                 <span className="font-mono text-[10px] text-brand-gold tracking-[0.3em] uppercase block font-bold">
                   {selectedImage.category}
                 </span>

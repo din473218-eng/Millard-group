@@ -100,8 +100,7 @@ export default function About({ onLearnMore }: AboutProps) {
                 The Millard Group Story
               </span>
               <h2 className="font-serif text-3xl md:text-5xl font-medium tracking-tight text-brand-charcoal leading-tight">
-                Pioneering the Art of <br />
-                <span className="italic font-normal text-brand-gold">Exquisite Living</span>
+                About <span className="italic font-normal text-brand-gold">Millard Group</span>
               </h2>
             </div>
 
@@ -118,9 +117,9 @@ export default function About({ onLearnMore }: AboutProps) {
               {corePillars.map((pillar, i) => {
                 const Icon = pillar.icon;
                 return (
-                  <div key={i} className="space-y-3 p-4 rounded-sm bg-white border border-brand-gold/15 hover:border-brand-gold/45 transition-all duration-300 shadow-sm">
-                    <div className="w-8 h-8 rounded-sm bg-brand-gold/10 flex items-center justify-center border border-brand-gold/20">
-                      <Icon className="w-4 h-4 text-brand-gold" />
+                  <div key={i} className="space-y-3 p-5 rounded-xl bg-white border border-brand-gold/15 hover:border-brand-gold/45 transition-all duration-350 shadow-md hover:shadow-lg flex flex-col items-start">
+                    <div className="w-9 h-9 rounded-lg bg-brand-gold/10 flex items-center justify-center border border-brand-gold/20 shrink-0">
+                      <Icon className="w-4.5 h-4.5 text-brand-gold" />
                     </div>
                     <h3 className="font-serif text-sm font-medium text-brand-charcoal">{pillar.title}</h3>
                     <p className="font-sans text-xs text-brand-brown/80 leading-relaxed">{pillar.desc}</p>
