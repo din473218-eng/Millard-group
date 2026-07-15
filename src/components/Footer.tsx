@@ -55,7 +55,7 @@ export default function Footer({ onNavigate, onInquire }: FooterProps) {
                   key={idx}
                   href={social.href}
                   aria-label={social.label}
-                  className="p-2 rounded-none bg-black/25 border border-brand-gold/15 text-brand-beige/60 hover:text-brand-gold hover:border-brand-gold transition-all duration-300"
+                  className="p-2.5 rounded-xl bg-black/25 border border-brand-gold/15 text-brand-beige/60 hover:text-brand-gold hover:border-brand-gold transition-all duration-300"
                 >
                   <Icon className="w-4 h-4" />
                 </a>
@@ -93,7 +93,7 @@ export default function Footer({ onNavigate, onInquire }: FooterProps) {
           </ul>
         </div>
 
-        {/* Brand links col */}
+        {/* Our Brands col */}
         <div className="md:col-span-2 space-y-4">
           <h4 className="font-mono text-[10px] tracking-widest text-brand-gold uppercase font-semibold">
             Our Brands
@@ -101,19 +101,19 @@ export default function Footer({ onNavigate, onInquire }: FooterProps) {
           <ul className="space-y-2.5 text-xs text-brand-beige/75">
             <li>
               <button onClick={() => onNavigate('millard')} className="hover:text-brand-gold transition-colors duration-200 cursor-pointer flex items-center space-x-1.5">
-                <span className="w-1 h-1 bg-brand-gold" />
+                <span className="w-1 h-1 bg-brand-gold rounded-full" />
                 <span>Millard Hospitality</span>
               </button>
             </li>
             <li>
               <button onClick={() => onNavigate('amber')} className="hover:text-brand-gold transition-colors duration-200 cursor-pointer flex items-center space-x-1.5">
-                <span className="w-1 h-1 bg-brand-gold" />
+                <span className="w-1 h-1 bg-brand-gold rounded-full" />
                 <span>Amber Coffee</span>
               </button>
             </li>
             <li>
               <button onClick={() => onNavigate('obika')} className="hover:text-brand-gold transition-colors duration-200 cursor-pointer flex items-center space-x-1.5">
-                <span className="w-1 h-1 bg-brand-gold" />
+                <span className="w-1 h-1 bg-brand-gold rounded-full" />
                 <span>Obika Gastronomy</span>
               </button>
             </li>
@@ -138,11 +138,11 @@ export default function Footer({ onNavigate, onInquire }: FooterProps) {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email address"
               required
-              className="w-full px-4 py-3 bg-black/35 border border-brand-gold/15 text-white text-xs rounded-none focus:border-brand-gold outline-none pr-12 transition-colors duration-300 placeholder-brand-beige/30"
+              className="w-full px-4 py-3 bg-black/35 border border-brand-gold/15 text-white text-xs rounded-xl focus:border-brand-gold outline-none pr-12 transition-colors duration-300 placeholder-brand-beige/30"
             />
             <button
               type="submit"
-              className="absolute right-1 top-1 bottom-1 px-3.5 bg-brand-gold hover:bg-white text-brand-charcoal rounded-none transition-colors duration-200 cursor-pointer"
+              className="absolute right-1 top-1 bottom-1 px-3.5 bg-brand-gold hover:bg-white text-brand-charcoal rounded-r-xl transition-colors duration-200 cursor-pointer"
             >
               {subscribed ? <Check className="w-4 h-4" /> : <Send className="w-4 h-4" />}
             </button>

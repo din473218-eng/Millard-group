@@ -75,12 +75,12 @@ export default function FeaturedGallery() {
             <div
               key={item.id}
               onClick={() => setSelectedImage({ url: item.url, title: item.title, category: item.category })}
-              className={`group relative overflow-hidden rounded-none border border-brand-gold/15 bg-white cursor-zoom-in shadow-sm ${item.span}`}
+              className={`group relative overflow-hidden rounded-2xl border border-brand-gold/15 bg-white cursor-zoom-in shadow-md hover:shadow-xl transition-all duration-500 ${item.span}`}
             >
               <img
                 src={item.url}
                 alt={item.title}
-                className="w-full h-full object-cover grayscale opacity-90 hover:grayscale-0 hover:scale-102 transition-all duration-700 ease-out"
+                className="w-full h-full object-cover grayscale opacity-90 hover:grayscale-0 hover:scale-105 transition-all duration-700 ease-out"
                 referrerPolicy="no-referrer"
               />
               {/* Elegant overlay gradient */}
@@ -97,7 +97,7 @@ export default function FeaturedGallery() {
               </div>
 
               {/* Zoom badge */}
-              <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-2 bg-white/90 border border-brand-gold/20">
+              <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-2 bg-white/90 border border-brand-gold/20 rounded-lg">
                 <ZoomIn className="w-3.5 h-3.5 text-brand-gold" />
               </div>
             </div>

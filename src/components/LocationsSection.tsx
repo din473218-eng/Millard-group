@@ -40,7 +40,7 @@ export default function LocationsSection() {
                   <button
                     key={loc.id}
                     onClick={() => setActiveLoc(loc)}
-                    className={`w-full p-6 text-left rounded-none border transition-all duration-300 cursor-pointer focus:outline-none flex flex-col space-y-2 ${
+                    className={`w-full p-6 text-left rounded-2xl border transition-all duration-300 cursor-pointer focus:outline-none flex flex-col space-y-2 ${
                       activeLoc.id === loc.id
                         ? 'bg-white border-brand-gold shadow-md'
                         : 'bg-white/40 border-brand-gold/10 hover:border-brand-gold/40'
@@ -51,7 +51,7 @@ export default function LocationsSection() {
                         {loc.brand}
                       </span>
                       {activeLoc.id === loc.id && (
-                        <span className="h-1.5 w-1.5 rounded-none bg-brand-gold rotate-45" />
+                        <span className="h-1.5 w-1.5 rounded-full bg-brand-gold" />
                       )}
                     </div>
                     <h3 className="font-serif text-lg text-brand-charcoal">
@@ -66,7 +66,7 @@ export default function LocationsSection() {
             </div>
 
             {/* Selected Location Details Card */}
-            <div className="bg-white p-6 rounded-none border border-brand-gold/15 space-y-4 shadow-sm">
+            <div className="bg-white p-6 rounded-2xl border border-brand-gold/15 space-y-4 shadow-md">
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-brand-gold shrink-0 mt-0.5" />
                 <div>
@@ -100,7 +100,7 @@ export default function LocationsSection() {
           </div>
 
           {/* Right: Map Integration Frame */}
-          <div className="lg:col-span-7 h-[400px] lg:h-auto min-h-[400px] relative rounded-none overflow-hidden border border-brand-gold/15 shadow-sm bg-white">
+          <div className="lg:col-span-7 h-[400px] lg:h-auto min-h-[400px] relative rounded-2xl overflow-hidden border border-brand-gold/15 shadow-md bg-white">
             {/* Live Google Maps Iframe */}
             <iframe
               title={`${activeLoc.name} Map Location`}

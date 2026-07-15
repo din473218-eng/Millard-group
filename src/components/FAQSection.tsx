@@ -35,7 +35,7 @@ export default function FAQSection() {
             return (
               <div
                 key={faq.id}
-                className="bg-white border border-brand-gold/15 rounded-none transition-all duration-300 overflow-hidden shadow-sm"
+                className="bg-white border border-brand-gold/15 rounded-2xl transition-all duration-300 overflow-hidden shadow-md hover:shadow-lg"
               >
                 {/* Accordion Trigger */}
                 <button
@@ -49,7 +49,7 @@ export default function FAQSection() {
                     </span>
                   </div>
 
-                  <div className={`p-1.5 rounded-none bg-brand-beige border border-brand-gold/20 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
+                  <div className={`p-1.5 rounded-lg bg-brand-beige border border-brand-gold/20 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
                     <ChevronDown className="w-4 h-4 text-brand-gold" />
                   </div>
                 </button>

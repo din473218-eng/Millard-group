@@ -165,7 +165,7 @@ export default function Navbar({ currentView, onNavigate }: NavbarProps) {
           <div className="hidden lg:flex items-center space-x-4">
             <button
               onClick={() => onNavigate('contact')}
-              className={`px-5 py-2 border text-[10px] uppercase tracking-widest transition-all cursor-pointer bg-transparent ${
+              className={`px-5 py-2 border text-[10px] uppercase tracking-widest transition-all cursor-pointer bg-transparent rounded-lg ${
                 isScrolled
                   ? 'border-brand-gold text-brand-charcoal hover:bg-brand-gold hover:text-white font-medium'
                   : 'border-white text-white hover:bg-white hover:text-brand-charcoal font-medium'
@@ -267,7 +267,7 @@ export default function Navbar({ currentView, onNavigate }: NavbarProps) {
                     setIsMobileMenuOpen(false);
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
-                  className="w-full py-3.5 bg-brand-charcoal text-white font-mono text-xs tracking-widest uppercase hover:bg-brand-gold transition-colors duration-300 rounded-none cursor-pointer"
+                  className="w-full py-3.5 bg-brand-charcoal text-white font-mono text-xs tracking-widest uppercase hover:bg-brand-gold transition-colors duration-300 rounded-xl cursor-pointer"
                 >
                   Concierge Inquiry
                 </button>

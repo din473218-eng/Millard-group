@@ -89,8 +89,8 @@ export default function Hero({ onExplore, onContact }: HeroProps) {
           transition={{ duration: 1.0, delay: 0.4 }}
           className="font-serif text-4xl sm:text-5xl md:text-7xl font-light tracking-tight text-white leading-[1.15] mb-6 max-w-4xl"
         >
-          Three Exceptional Brands.<br />
-          <span className="italic font-normal text-brand-gold">One Premium Experience.</span>
+          Three Premium Brands.<br />
+          <span className="italic font-normal text-brand-gold">One Exceptional Experience.</span>
         </motion.h1>
 
         {/* Subheadline */}
@@ -100,7 +100,7 @@ export default function Hero({ onExplore, onContact }: HeroProps) {
           transition={{ duration: 1.0, delay: 0.6 }}
           className="font-sans text-neutral-300 text-sm sm:text-base md:text-lg tracking-wide font-light max-w-2xl leading-relaxed mb-10"
         >
-          Discover the finest specialty coffee, authentic Italian dining, and premium hospitality curated under one destination for the discerning explorer.
+          A master family of fine-dining, small-batch roasting, and bespoke estate hospitality curated to define modern luxury living.
         </motion.p>
 
         {/* Call to Actions */}
@@ -113,16 +113,16 @@ export default function Hero({ onExplore, onContact }: HeroProps) {
           {/* Explore Our Brands button */}
           <button
             onClick={onExplore}
-            className="w-full sm:w-auto px-10 py-4 bg-brand-gold hover:bg-white text-brand-charcoal hover:text-brand-charcoal font-mono text-xs tracking-[0.2em] uppercase font-bold rounded-none shadow-md hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2 cursor-pointer group"
+            className="w-full sm:w-auto px-10 py-4 bg-brand-gold hover:bg-white text-brand-charcoal hover:text-brand-charcoal font-mono text-xs tracking-[0.2em] uppercase font-bold rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2 cursor-pointer group"
           >
-            <span>Explore Brands</span>
+            <span>Explore Our Brands</span>
             <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" />
           </button>
 
           {/* Contact Us button */}
           <button
             onClick={onContact}
-            className="w-full sm:w-auto px-10 py-4 border border-white hover:border-brand-gold text-white hover:text-brand-gold font-mono text-xs tracking-[0.2em] uppercase rounded-none bg-transparent hover:bg-white/5 transition-all duration-300 flex items-center justify-center cursor-pointer font-bold"
+            className="w-full sm:w-auto px-10 py-4 border border-white hover:border-brand-gold text-white hover:text-brand-gold font-mono text-xs tracking-[0.2em] uppercase rounded-xl bg-transparent hover:bg-white/5 transition-all duration-300 flex items-center justify-center cursor-pointer font-bold"
           >
             <span>Contact Us</span>
           </button>

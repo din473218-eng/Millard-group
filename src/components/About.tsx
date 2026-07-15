@@ -134,10 +134,10 @@ export default function About({ onLearnMore }: AboutProps) {
           <div className="lg:col-span-5 relative">
             <div className="relative aspect-square w-full max-w-[450px] mx-auto">
               {/* Outer Golden Framed Box */}
-              <div className="absolute inset-0 border border-brand-gold/20 rounded-sm transform translate-x-4 translate-y-4 pointer-events-none" />
+              <div className="absolute inset-0 border border-brand-gold/20 rounded-2xl transform translate-x-4 translate-y-4 pointer-events-none" />
               
               {/* Main Image */}
-              <div className="absolute inset-0 overflow-hidden rounded-sm shadow-xl bg-white border border-brand-gold/15">
+              <div className="absolute inset-0 overflow-hidden rounded-2xl shadow-xl bg-white border border-brand-gold/15">
                 <img
                   src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800"
                   alt="Millard Group Hospitality"
@@ -148,7 +148,7 @@ export default function About({ onLearnMore }: AboutProps) {
               </div>
 
               {/* Smaller overlapping floating image card */}
-              <div className="absolute -bottom-6 -left-6 md:-left-12 w-1/2 aspect-[4/5] rounded-sm overflow-hidden shadow-xl border border-brand-gold/15 bg-white">
+              <div className="absolute -bottom-6 -left-6 md:-left-12 w-1/2 aspect-[4/5] rounded-2xl overflow-hidden shadow-xl border border-brand-gold/15 bg-white">
                 <img
                   src="https://images.unsplash.com/photo-1507133750040-4a8f57021571?q=80&w=600"
                   alt="Amber Coffee Brewing"

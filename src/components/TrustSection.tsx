@@ -5,24 +5,14 @@ import { motion } from 'motion/react';
 export default function TrustSection() {
   const trustItems = [
     {
+      icon: Crown,
+      title: 'Excellence',
+      desc: 'Award-winning venues, Michelin-level standards, and a legacy of quiet, unparalleled refinement.'
+    },
+    {
       icon: Gem,
-      title: 'Premium Quality',
+      title: 'Quality',
       desc: 'Only the rarest single-origin micro-lots, DOP certified ingredients, and premium materials enter our portfolio.'
-    },
-    {
-      icon: Users,
-      title: 'Professional Team',
-      desc: 'Elite culinary masters, award-winning baristas, and certified estate managers coordinate to deliver effortless execution.'
-    },
-    {
-      icon: ShieldCheck,
-      title: 'Customer Satisfaction',
-      desc: 'We maintain a flawless record of private care, ensuring absolute confidentiality and individualized experiences for every guest.'
-    },
-    {
-      icon: Clock,
-      title: 'Years of Experience',
-      desc: 'Over 15 years of industry-defining luxury service, establishing benchmark standards across gastronomy and hospitality.'
     },
     {
       icon: Cpu,
@@ -30,9 +20,19 @@ export default function TrustSection() {
       desc: 'Pioneering eco-friendly convection roasting and modern architectural systems that harmonize luxury with sustainability.'
     },
     {
-      icon: Crown,
-      title: 'Excellence',
-      desc: 'Award-winning venues, Michelin-level standards, and a legacy of quiet, unparalleled refinement.'
+      icon: ShieldCheck,
+      title: 'Customer Satisfaction',
+      desc: 'We maintain a flawless record of private care, ensuring absolute confidentiality and individualized experiences for every guest.'
+    },
+    {
+      icon: Users,
+      title: 'Professional Team',
+      desc: 'Elite culinary masters, award-winning baristas, and certified estate managers coordinate to deliver effortless execution.'
+    },
+    {
+      icon: Clock,
+      title: 'Premium Experience',
+      desc: 'Over 15 years of industry-defining luxury service, establishing benchmark standards across gastronomy and hospitality.'
     }
   ];
 
@@ -88,13 +88,13 @@ export default function TrustSection() {
                 key={i}
                 variants={cardVariants}
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                className="group relative p-8 bg-brand-beige/25 hover:bg-white border border-brand-gold/10 hover:border-brand-gold/40 rounded-none shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col items-start text-left"
+                className="group relative p-8 bg-brand-beige/25 hover:bg-white border border-brand-gold/10 hover:border-brand-gold/40 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col items-start text-left"
               >
                 {/* Visual border accents */}
-                <div className="absolute top-0 left-0 w-[2px] h-0 bg-brand-gold group-hover:h-full transition-all duration-500" />
-                <div className="absolute top-0 left-0 w-0 h-[2px] bg-brand-gold group-hover:w-full transition-all duration-500" />
+                <div className="absolute top-0 left-0 w-[2px] h-0 bg-brand-gold group-hover:h-full transition-all duration-500 rounded-l-2xl" />
+                <div className="absolute top-0 left-0 w-0 h-[2px] bg-brand-gold group-hover:w-full transition-all duration-500 rounded-t-2xl" />
 
-                <div className="mb-6 p-3 bg-brand-beige border border-brand-gold/20 rounded-none text-brand-gold group-hover:bg-brand-charcoal group-hover:text-white group-hover:border-transparent transition-all duration-500">
+                <div className="mb-6 p-3 bg-brand-beige border border-brand-gold/20 rounded-xl text-brand-gold group-hover:bg-brand-charcoal group-hover:text-white group-hover:border-transparent transition-all duration-500">
                   <Icon className="w-6 h-6 stroke-[1.25]" />
                 </div>
                 <h3 className="font-serif text-lg font-medium text-brand-charcoal mb-3 group-hover:text-brand-gold transition-colors duration-300">
