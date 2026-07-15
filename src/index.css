@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-gold-50: #FBF9F5;
+  --color-gold-100: #F3ECE0;
+  --color-gold-200: #E6D6BD;
+  --color-gold-300: #D8BD8E;
+  --color-gold-400: #C5A059;
+  --color-gold-500: #B28E46;
+  --color-gold-600: #937130;
+  --color-gold-700: #6D5120;
+  --color-gold-800: #4B3714;
+  --color-gold-950: #1C1304;
+
+  --color-brand-beige: #F9F7F2;
+  --color-brand-charcoal: #1A1A1A;
+  --color-brand-brown: #5A4033;
+  --color-brand-gold: #C5A059;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-brand-beige text-brand-charcoal antialiased selection:bg-brand-gold selection:text-white overflow-x-hidden;
+  }
+}
+
+/* Custom luxury scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F3ECE0;
+}
+::-webkit-scrollbar-thumb {
+  background: #C5A059;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B28E46;
+}
