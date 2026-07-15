@@ -44,7 +44,7 @@ export default function BrandDetailPage({ brand, onBack, onInquire }: BrandDetai
           {/* Back button */}
           <button
             onClick={onBack}
-            className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-none bg-white hover:bg-brand-charcoal text-brand-charcoal hover:text-white font-mono text-[10px] tracking-widest uppercase transition-all duration-300 cursor-pointer border border-brand-gold/25 focus:outline-none mb-6 shadow-sm"
+            className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-xl bg-white hover:bg-brand-charcoal text-brand-charcoal hover:text-white font-mono text-[10px] tracking-widest uppercase transition-all duration-300 cursor-pointer border border-brand-gold/25 focus:outline-none mb-6 shadow-md hover:shadow-lg"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>Return to Portfolio</span>
@@ -89,7 +89,7 @@ export default function BrandDetailPage({ brand, onBack, onInquire }: BrandDetai
             </div>
           </div>
 
-          <div className="relative aspect-[4/3] rounded-none overflow-hidden shadow-sm border border-brand-gold/15">
+          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-brand-gold/15">
             <img
               src={brand.storyImage}
               alt={brand.storyTitle}
@@ -122,9 +122,9 @@ export default function BrandDetailPage({ brand, onBack, onInquire }: BrandDetai
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-4 py-1.5 rounded-none text-xs font-mono tracking-wider uppercase transition-all duration-300 cursor-pointer border ${
+                  className={`px-4 py-1.5 rounded-full text-xs font-mono tracking-wider uppercase transition-all duration-300 cursor-pointer border ${
                     activeCategory === cat
-                      ? 'bg-brand-charcoal text-white border-transparent font-semibold shadow-sm'
+                      ? 'bg-brand-charcoal text-white border-transparent font-semibold shadow-md'
                       : 'bg-brand-beige text-brand-brown/75 border-brand-gold/15 hover:text-brand-gold hover:border-brand-gold'
                   }`}
                 >
@@ -139,7 +139,7 @@ export default function BrandDetailPage({ brand, onBack, onInquire }: BrandDetai
             {filteredProducts.map((prod) => (
               <div
                 key={prod.id}
-                className="group bg-brand-beige rounded-none border border-brand-gold/15 hover:border-brand-gold/45 overflow-hidden shadow-sm flex flex-col justify-between transition-all duration-300"
+                className="group bg-white/45 backdrop-blur-xl rounded-2xl border border-brand-gold/15 hover:border-brand-gold/45 overflow-hidden shadow-md hover:shadow-2xl flex flex-col justify-between transition-all duration-500 hover:-translate-y-2"
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img
@@ -151,7 +151,7 @@ export default function BrandDetailPage({ brand, onBack, onInquire }: BrandDetai
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-charcoal/30 via-transparent to-transparent" />
                   
                   {prod.price && (
-                    <div className="absolute top-4 right-4 px-3 py-1 bg-white border border-brand-gold/15 rounded-none text-brand-gold font-serif text-sm tracking-wide shadow-sm">
+                    <div className="absolute top-4 right-4 px-3 py-1 bg-white border border-brand-gold/15 rounded-lg text-brand-gold font-serif text-sm tracking-wide shadow-md">
                       {prod.price}
                     </div>
                   )}
@@ -177,7 +177,7 @@ export default function BrandDetailPage({ brand, onBack, onInquire }: BrandDetai
                       {prod.features.map((feat, idx) => (
                         <span
                           key={idx}
-                          className="px-2 py-0.5 bg-white border border-brand-gold/10 rounded-none text-[9px] font-mono text-brand-brown/75 tracking-wider uppercase"
+                          className="px-2 py-0.5 bg-white border border-brand-gold/10 rounded-md text-[9px] font-mono text-brand-brown/75 tracking-wider uppercase"
                         >
                           {feat}
                         </span>
@@ -211,7 +211,7 @@ export default function BrandDetailPage({ brand, onBack, onInquire }: BrandDetai
             <div
               key={img.id}
               onClick={() => setSelectedImage({ url: img.url, caption: img.caption })}
-              className="group relative aspect-square overflow-hidden rounded-none border border-brand-gold/15 bg-brand-beige cursor-zoom-in"
+              className="group relative aspect-square overflow-hidden rounded-2xl border border-brand-gold/15 bg-brand-beige cursor-zoom-in shadow-md hover:shadow-xl transition-all duration-500"
             >
               <img
                 src={img.url}
@@ -221,7 +221,7 @@ export default function BrandDetailPage({ brand, onBack, onInquire }: BrandDetai
               />
               <div className="absolute inset-0 bg-brand-charcoal/0 group-hover:bg-brand-charcoal/30 transition-colors duration-300" />
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="p-3 bg-white/95 backdrop-blur-md rounded-none border border-brand-gold/20 shadow-md">
+                <div className="p-3 bg-white/95 backdrop-blur-md rounded-xl border border-brand-gold/20 shadow-lg">
                   <ZoomIn className="w-5 h-5 text-brand-gold" />
                 </div>
               </div>
@@ -244,7 +244,7 @@ export default function BrandDetailPage({ brand, onBack, onInquire }: BrandDetai
             {brand.reviews.map((rev) => (
               <div
                 key={rev.id}
-                className="p-8 md:p-10 bg-brand-beige rounded-none border border-brand-gold/15 hover:border-brand-gold/30 shadow-sm flex flex-col justify-between text-left space-y-6 transition-all duration-300"
+                className="p-8 md:p-10 bg-white/40 backdrop-blur-md rounded-2xl border border-brand-gold/15 hover:border-brand-gold/30 shadow-md hover:shadow-xl flex flex-col justify-between text-left space-y-6 transition-all duration-500"
               >
                 <div className="space-y-4">
                   {/* Rating Stars */}
@@ -292,7 +292,7 @@ export default function BrandDetailPage({ brand, onBack, onInquire }: BrandDetai
 
           <div className="space-y-6">
             <div className="flex items-start space-x-4">
-              <div className="p-3 rounded-none bg-white border border-brand-gold/15 text-brand-gold">
+              <div className="p-3 rounded-xl bg-brand-gold/10 text-brand-gold">
                 <Phone className="w-5 h-5" />
               </div>
               <div>
@@ -304,7 +304,7 @@ export default function BrandDetailPage({ brand, onBack, onInquire }: BrandDetai
             </div>
 
             <div className="flex items-start space-x-4">
-              <div className="p-3 rounded-none bg-white border border-brand-gold/15 text-brand-gold">
+              <div className="p-3 rounded-xl bg-brand-gold/10 text-brand-gold">
                 <Mail className="w-5 h-5" />
               </div>
               <div>
@@ -316,7 +316,7 @@ export default function BrandDetailPage({ brand, onBack, onInquire }: BrandDetai
             </div>
 
             <div className="flex items-start space-x-4">
-              <div className="p-3 rounded-none bg-white border border-brand-gold/15 text-brand-gold">
+              <div className="p-3 rounded-xl bg-brand-gold/10 text-brand-gold">
                 <MapPin className="w-5 h-5" />
               </div>
               <div>
@@ -328,7 +328,7 @@ export default function BrandDetailPage({ brand, onBack, onInquire }: BrandDetai
             </div>
 
             <div className="flex items-start space-x-4">
-              <div className="p-3 rounded-none bg-white border border-brand-gold/15 text-brand-gold">
+              <div className="p-3 rounded-xl bg-brand-gold/10 text-brand-gold">
                 <Clock className="w-5 h-5" />
               </div>
               <div className="space-y-1">
@@ -347,7 +347,7 @@ export default function BrandDetailPage({ brand, onBack, onInquire }: BrandDetai
               href={brand.contact.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 px-6 py-3 bg-[#25D366] hover:bg-[#20ba59] text-white font-mono text-xs tracking-widest uppercase font-semibold rounded-none shadow-sm transition-colors duration-300 cursor-pointer"
+              className="inline-flex items-center space-x-2 px-6 py-3 bg-[#25D366] hover:bg-[#20ba59] text-white font-mono text-xs tracking-widest uppercase font-semibold rounded-xl shadow-md transition-all duration-300 cursor-pointer"
             >
               <MessageCircle className="w-4 h-4 fill-white text-[#25D366]" />
               <span>WhatsApp Chat</span>
@@ -355,7 +355,7 @@ export default function BrandDetailPage({ brand, onBack, onInquire }: BrandDetai
             
             <a
               href={`tel:${brand.contact.phone}`}
-              className="inline-flex items-center space-x-2 px-6 py-3 bg-white hover:bg-brand-charcoal text-brand-charcoal hover:text-white font-mono text-xs tracking-widest uppercase font-semibold rounded-none border border-brand-gold/25 transition-colors duration-300 cursor-pointer shadow-sm"
+              className="inline-flex items-center space-x-2 px-6 py-3 bg-white hover:bg-brand-charcoal text-brand-charcoal hover:text-white font-mono text-xs tracking-widest uppercase font-semibold rounded-xl border border-brand-gold/25 transition-all duration-300 cursor-pointer shadow-md"
             >
               <Phone className="w-4 h-4" />
               <span>Call Direct</span>
@@ -365,7 +365,7 @@ export default function BrandDetailPage({ brand, onBack, onInquire }: BrandDetai
 
         {/* Custom inquiry Form Column */}
         <div className="lg:col-span-7">
-          <div className="p-8 md:p-10 bg-white rounded-none border border-brand-gold/15 shadow-sm space-y-6">
+          <div className="p-8 md:p-10 bg-white/45 backdrop-blur-xl rounded-2xl border border-brand-gold/15 shadow-lg space-y-6">
             <div className="space-y-2">
               <h3 className="font-serif text-xl text-brand-charcoal font-medium">Inquire Electively</h3>
               <p className="font-sans text-xs text-brand-brown/70">
@@ -380,7 +380,7 @@ export default function BrandDetailPage({ brand, onBack, onInquire }: BrandDetai
                   <input
                     type="text"
                     required
-                    className="w-full px-4 py-3 bg-brand-beige border border-brand-gold/20 focus:border-brand-gold text-brand-charcoal text-sm rounded-none outline-none transition-colors duration-200"
+                    className="w-full px-4 py-3 bg-white/60 border border-brand-gold/20 focus:border-brand-gold text-brand-charcoal text-sm rounded-xl outline-none transition-colors duration-200"
                     placeholder="E.g. Richard Sterling"
                   />
                 </div>
@@ -389,7 +389,7 @@ export default function BrandDetailPage({ brand, onBack, onInquire }: BrandDetai
                   <input
                     type="email"
                     required
-                    className="w-full px-4 py-3 bg-brand-beige border border-brand-gold/20 focus:border-brand-gold text-brand-charcoal text-sm rounded-none outline-none transition-colors duration-200"
+                    className="w-full px-4 py-3 bg-white/60 border border-brand-gold/20 focus:border-brand-gold text-brand-charcoal text-sm rounded-xl outline-none transition-colors duration-200"
                     placeholder="E.g. richard@sterling.com"
                   />
                 </div>
@@ -399,7 +399,7 @@ export default function BrandDetailPage({ brand, onBack, onInquire }: BrandDetai
                 <label className="font-mono text-[10px] tracking-wider text-brand-brown/80 uppercase block font-semibold">Nature of Inquiry</label>
                 <select
                   required
-                  className="w-full px-4 py-3 bg-brand-beige border border-brand-gold/20 focus:border-brand-gold text-brand-charcoal text-sm rounded-none outline-none transition-colors duration-200 appearance-none"
+                  className="w-full px-4 py-3 bg-white/60 border border-brand-gold/20 focus:border-brand-gold text-brand-charcoal text-sm rounded-xl outline-none transition-colors duration-200 appearance-none"
                 >
                   {brand.id === 'millard' && (
                     <>
@@ -433,14 +433,14 @@ export default function BrandDetailPage({ brand, onBack, onInquire }: BrandDetai
                 <textarea
                   rows={4}
                   required
-                  className="w-full px-4 py-3 bg-brand-beige border border-brand-gold/20 focus:border-brand-gold text-brand-charcoal text-sm rounded-none outline-none transition-colors duration-200 resize-none"
+                  className="w-full px-4 py-3 bg-white/60 border border-brand-gold/20 focus:border-brand-gold text-brand-charcoal text-sm rounded-xl outline-none transition-colors duration-200 resize-none"
                   placeholder="Detail your requirements, preferred timing, or special menu directives..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full py-4 bg-brand-charcoal hover:bg-brand-gold text-white font-mono text-xs tracking-widest uppercase font-bold rounded-none shadow-sm transition-colors duration-300 cursor-pointer"
+                className="w-full py-4 bg-brand-charcoal hover:bg-brand-gold text-white font-mono text-xs tracking-widest uppercase font-bold rounded-xl shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer"
               >
                 Send Secure Transmission
               </button>
@@ -452,7 +452,7 @@ export default function BrandDetailPage({ brand, onBack, onInquire }: BrandDetai
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 10 }}
-                  className="p-4 bg-emerald-500/5 border border-emerald-500/20 text-emerald-700 font-sans text-xs text-center leading-relaxed rounded-none"
+                  className="p-4 bg-emerald-500/5 border border-emerald-500/20 text-emerald-700 font-sans text-xs text-center leading-relaxed rounded-xl"
                 >
                   ✓ Your elite inquiry has been securely received. A dedicated representative from the {brand.name} team will establish contact within 2 hours.
                 </motion.div>
@@ -476,7 +476,7 @@ export default function BrandDetailPage({ brand, onBack, onInquire }: BrandDetai
             {/* Close button */}
             <button
               onClick={() => setSelectedImage(null)}
-              className="absolute top-6 right-6 p-2 rounded-none bg-brand-charcoal/85 border border-brand-gold/20 text-white hover:text-brand-gold cursor-pointer focus:outline-none"
+              className="absolute top-6 right-6 p-2 rounded-xl bg-brand-charcoal/85 border border-brand-gold/20 text-white hover:text-brand-gold cursor-pointer focus:outline-none"
             >
               <X className="w-6 h-6" />
             </button>
@@ -485,11 +485,11 @@ export default function BrandDetailPage({ brand, onBack, onInquire }: BrandDetai
               <img
                 src={selectedImage.url}
                 alt={selectedImage.caption}
-                className="max-h-[70vh] object-contain rounded-none border border-brand-gold/15 shadow-2xl"
+                className="max-h-[70vh] object-contain rounded-2xl border border-brand-gold/15 shadow-2xl"
                 onClick={(e) => e.stopPropagation()}
                 referrerPolicy="no-referrer"
               />
-              <p className="mt-4 font-serif text-sm text-brand-beige tracking-wide text-center bg-brand-charcoal border border-brand-gold/25 px-6 py-2.5 rounded-none shadow-xl max-w-md">
+              <p className="mt-4 font-serif text-sm text-brand-beige tracking-wide text-center bg-brand-charcoal border border-brand-gold/25 px-6 py-2.5 rounded-xl shadow-xl max-w-md">
                 {selectedImage.caption}
               </p>
             </div>

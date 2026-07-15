@@ -35,9 +35,9 @@ export default function LatestNewsSection() {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-4 py-1.5 rounded-none text-[10px] font-mono tracking-wider uppercase transition-all duration-300 cursor-pointer border ${
+                className={`px-5 py-2 rounded-full text-[10px] font-mono tracking-wider uppercase transition-all duration-300 cursor-pointer border ${
                   activeTab === tab
-                    ? 'bg-brand-gold text-white border-brand-gold font-semibold shadow-sm'
+                    ? 'bg-brand-gold text-white border-brand-gold font-bold shadow-md'
                     : 'bg-brand-beige text-brand-brown/80 border-brand-gold/15 hover:text-brand-gold hover:border-brand-gold/45'
                 }`}
               >
@@ -53,7 +53,7 @@ export default function LatestNewsSection() {
             <article
               key={news.id}
               onClick={() => setSelectedArticle(news)}
-              className="group bg-brand-beige rounded-none border border-brand-gold/15 hover:border-brand-gold/45 overflow-hidden shadow-sm flex flex-col justify-between h-full transition-all duration-300 hover:-translate-y-1.5 cursor-pointer"
+              className="group bg-white/45 backdrop-blur-xl rounded-2xl border border-brand-gold/15 hover:border-brand-gold/45 overflow-hidden shadow-lg flex flex-col justify-between h-full transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl cursor-pointer"
             >
               <div className="space-y-4">
                 {/* Article Cover */}
@@ -67,7 +67,7 @@ export default function LatestNewsSection() {
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-beige/20 to-transparent pointer-events-none" />
                   
                   {/* Category Tag */}
-                  <div className="absolute bottom-3 left-3 px-2.5 py-0.5 bg-white/95 border border-brand-gold/20 rounded-none text-[9px] font-mono text-brand-gold tracking-wider uppercase font-semibold">
+                  <div className="absolute bottom-3 left-3 px-3 py-1 bg-white/95 border border-brand-gold/20 rounded-lg text-[9px] font-mono text-brand-gold tracking-wider uppercase font-semibold shadow-sm">
                     {news.category}
                   </div>
                 </div>
@@ -118,13 +118,13 @@ export default function LatestNewsSection() {
               initial={{ scale: 0.95, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 20 }}
-              className="bg-brand-beige border border-brand-gold/30 rounded-none max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl p-6 md:p-8 space-y-6 scrollbar"
+              className="bg-brand-beige border border-brand-gold/30 rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl p-6 md:p-8 space-y-6 scrollbar"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Header block */}
               <div className="flex justify-between items-start">
                 <div className="space-y-1">
-                  <span className="px-2.5 py-0.5 bg-white border border-brand-gold/20 rounded-none text-[9px] font-mono text-brand-gold tracking-wider uppercase inline-block font-semibold">
+                  <span className="px-2.5 py-0.5 bg-white border border-brand-gold/20 rounded-lg text-[9px] font-mono text-brand-gold tracking-wider uppercase inline-block font-semibold">
                     {selectedArticle.category}
                   </span>
                   <div className="flex items-center space-x-3 font-mono text-[10px] text-brand-brown/60 mt-2">
@@ -135,7 +135,7 @@ export default function LatestNewsSection() {
                 </div>
                 <button
                   onClick={() => setSelectedArticle(null)}
-                  className="p-1.5 rounded-none bg-white border border-brand-gold/20 text-brand-charcoal hover:text-brand-gold cursor-pointer focus:outline-none"
+                  className="p-1.5 rounded-xl bg-white border border-brand-gold/20 text-brand-charcoal hover:text-brand-gold cursor-pointer focus:outline-none transition-colors duration-200"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -145,7 +145,7 @@ export default function LatestNewsSection() {
                 {selectedArticle.title}
               </h2>
 
-              <div className="aspect-[16/9] w-full overflow-hidden rounded-none border border-brand-gold/15 bg-white">
+              <div className="aspect-[16/9] w-full overflow-hidden rounded-2xl border border-brand-gold/15 bg-white shadow-md">
                 <img
                   src={selectedArticle.image}
                   alt={selectedArticle.title}
